@@ -1,6 +1,6 @@
 # from run import cli
 
-from daas import DatasetSearch
+from DaasApi import DatasetSearch
 
 if __name__ == "__main__":
     user_input = input("enter action and search query: ").split(" ")
