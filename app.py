@@ -1,8 +1,20 @@
 # from run import cli
+from flask import jsonify
+from flask import Flask, render_template , request
+app = Flask(__name__)
+
+
 
 from DaasApi import DatasetSearch
 
-if __name__ == "__main__":
-    user_input = input("Enter the query parameter of ckan search  ").split(" ")
+@app.route("/")
+def show_title():
+    #user_input = input("Enter the query parameter of ckan search").split(" ")
+    #user_input= request.args.get("title")
     sd = DatasetSearch()
-    sd.titleSearch(user_input[0])
+    response=sd.titleSearch("title")
+    return jsonify(response)
+
+if __name__ == '__main__':
+    #show_title()
+    app.run(host='0.0.0.0', debug=True)
