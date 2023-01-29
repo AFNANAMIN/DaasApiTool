@@ -1,5 +1,4 @@
 import requests
-
 class DatasetSearch:
     def __init__(self):
         self.url = 'https://www.govdata.de/ckan/api/action/'
@@ -17,4 +16,3 @@ class DatasetSearch:
         titles = [ it['title'] for it in data['result']['results'] ]
         #print(titles)
         return titles
-
